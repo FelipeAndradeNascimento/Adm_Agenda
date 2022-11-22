@@ -10,11 +10,9 @@ namespace Adm_Agenda.Regras
 
         public List<mdEndereco> mdEnderecos = new List<mdEndereco>();
 
-
-        //     return View(await _context.DbSetEndereco.ToListAsync());
         public List<mdEndereco> retornaEnderecos()
         {
-            List<mdEndereco> listaEndereco = this.DbContext.DbSetEndereco.ToList();
+            List<mdEndereco> listaEndereco = DbContext.DbSetEndereco.ToList();
             return listaEndereco;
         }
 

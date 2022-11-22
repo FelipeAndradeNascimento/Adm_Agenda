@@ -1,12 +1,12 @@
 ﻿@model Adm_Agenda.Models.mdAgenda
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Edit</h1>
+<h1>ViewData["Title"]</h1>
 
-<h4>mdAgenda</h4>
+<h4>Agenda</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,15 +28,13 @@
                 <input asp-for="dtCompromisso" class="form-control" />
                 <span asp-validation-for="dtCompromisso" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {
