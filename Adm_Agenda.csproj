@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Regras\**" />
+    <Content Remove="Regras\**" />
+    <EmbeddedResource Remove="Regras\**" />
+    <None Remove="Regras\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\jsBuscaPorCep.js" />
   </ItemGroup>
 

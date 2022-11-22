@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Adm_Agenda.Data;
 using Adm_Agenda.Models;
-using Adm_Agenda.Regras;
 using Adm_Agenda.ViewModel;
 
 namespace Adm_Agenda.Controllers
@@ -48,13 +47,7 @@ namespace Adm_Agenda.Controllers
         // GET: Contatos/Create
         public IActionResult Create()
         {
-            /*
-            clsDadosEndereco objRegras = new clsDadosEndereco();
-            List<mdEndereco> lista_enderecos = new List<mdEndereco>();
-            lista_enderecos = objRegras.retornaEnderecos();
-
-            ViewData["listaEndereco"] = new SelectList(lista_enderecos, "IdEndereco", "Rua");
-            */
+            //Carrega Enderços existentes
             var modelEnd = new ContatoViewModel();
             return View(modelEnd);
         }

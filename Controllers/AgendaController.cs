@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Adm_Agenda.Data;
 using Adm_Agenda.Models;
+using Adm_Agenda.ViewModel;
 
 namespace Adm_Agenda.Controllers
 {
@@ -46,7 +47,8 @@ namespace Adm_Agenda.Controllers
         // GET: Agenda/Create
         public IActionResult Create()
         {
-            return View();
+            var modelContato = new ContatoViewModel();
+            return View(modelContato);
         }
 
         // POST: Agenda/Create
