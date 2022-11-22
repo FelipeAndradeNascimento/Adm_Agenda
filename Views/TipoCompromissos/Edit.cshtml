@@ -1,0 +1,34 @@
+﻿@model Adm_Agenda.Models.mdTipoCompromisso
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Tipo de Compromisso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdTipoCompromisso" />
+            <div class="form-group">
+                <label asp-for="DescricaoTipo" class="control-label"></label>
+                <input asp-for="DescricaoTipo" class="form-control" />
+                <span asp-validation-for="DescricaoTipo" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

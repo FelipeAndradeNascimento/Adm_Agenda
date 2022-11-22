@@ -1,0 +1,41 @@
+﻿@model Adm_Agenda.Models.mdAgenda
+
+@{
+    ViewData["Title"] = "Novo";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Agenda</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="idContato" class="control-label"></label>
+                <input asp-for="idContato" class="form-control" />
+                <span asp-validation-for="idContato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idTipo" class="control-label"></label>
+                <input asp-for="idTipo" class="form-control" />
+                <span asp-validation-for="idTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dtCompromisso" class="control-label"></label>
+                <input asp-for="dtCompromisso" class="form-control" />
+                <span asp-validation-for="dtCompromisso" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-primary" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Pagina Inicial";
+}
+
+<div id="app">
+    <home-component>
+        <div class="text-center">
+            <h1 class="display-4">...Sempre com você - Agenda</h1>
+            <p>Aplicativo para ajudar a Organizar seus compromissos Pessoais - (modulo básico)</p>
+            <p>* <a href="Contatos/Index">Contatos</a> </p>
+            <p>* <a href="Agenda/Index">Seus Compromissos</a> </p>
+            <hr />
+            <p>--- Configure ---</p>
+            <p>* <a href="TipoCompromissos/Index">Tipo de Compromissos</a> </p>
+            <p>* <a href="Enderecos/Index">Endereços</a> </p>
+        </div>
+    </home-component>
+</div>
+
+@section scripts {
+    <script src="@Url.Content("~/bundle/home.js")"></script>
+}

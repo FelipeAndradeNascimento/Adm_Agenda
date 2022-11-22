@@ -1,0 +1,27 @@
+﻿@model Adm_Agenda.Models.mdTipoCompromisso
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Tem certeza que deseja excluir esse Item?</h3>
+<div>
+    <h4>Tipo Compromisso</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.DescricaoTipo)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.DescricaoTipo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdTipoCompromisso" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+    </form>
+</div>

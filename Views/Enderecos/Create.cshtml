@@ -1,0 +1,127 @@
+﻿@model Adm_Agenda.Models.mdEndereco
+
+@{
+    ViewData["Title"] = "Novo";
+}
+
+<script type="text/javascript">
+
+    //$(document).ready(function() {
+
+    //    function limpa_formulário_cep() {
+    //        // Limpa valores do formulário de cep.
+    //        $("#rua").val("");
+    //        $("#bairro").val("");
+    //        $("#cidade").val("");
+    //        $("#uf").val("");
+    //        $("#ibge").val("");
+    //    }
+            
+    //        //Quando o campo cep perde o foco.
+    //        $("#cep").blur(function() {
+
+    //            //Nova variável "cep" somente com dígitos.
+    //            var cep = $(this).val().replace(/\D/g, '');
+
+    //            //Verifica se campo cep possui valor informado.
+    //            if (cep != "") {
+
+    //                //Expressão regular para validar o CEP.
+    //                var validacep = /^[0-9]{8}$/;
+
+    //                //Valida o formato do CEP.
+    //                if(validacep.test(cep)) {
+
+    //                    //Preenche os campos com "..." enquanto consulta webservice.
+    //                    $("#rua").val("...");
+    //                    $("#bairro").val("...");
+    //                    $("#cidade").val("...");
+    //                    $("#uf").val("...");
+    //                    $("#ibge").val("...");
+
+    //                    //Consulta o webservice viacep.com.br/
+    //                    $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+
+    //                        if (!("erro" in dados)) {
+    //                            //Atualiza os campos com os valores da consulta.
+    //                            $("#rua").val(dados.logradouro);
+    //                            $("#bairro").val(dados.bairro);
+    //                            $("#cidade").val(dados.localidade);
+    //                            $("#uf").val(dados.uf);
+    //                            $("#ibge").val(dados.ibge);
+    //                            $('#Endereco').val(dados.logradouro + '-' + dados.bairro);
+    //                        } //end if.
+    //                        else {
+    //                            //CEP pesquisado não foi encontrado.
+    //                            limpa_formulário_cep();
+    //                            alert("CEP não encontrado.");
+    //                        }
+    //                    });
+    //                } //end if.
+    //                else {
+    //                    //cep é inválido.
+    //                    limpa_formulário_cep();
+    //                    alert("Formato de CEP inválido.");
+    //                }
+    //            } //end if.
+    //            else {
+    //                //cep sem valor, limpa formulário.
+    //                limpa_formulário_cep();
+    //            }
+    //        });
+    //    });
+
+</script>
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Endereço</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cep" class="control-label"></label>
+                <input asp-for="Cep" id="cep" class="form-control" size="10" maxlength="9" />
+                <span asp-validation-for="Cep" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Rua" class="control-label"></label>
+                <input asp-for="Rua" class="form-control" name="rua" id="rua" size="60" />
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label"></label>
+                <input asp-for="Bairro" class="form-control" name="bairro" id="bairro" size="40" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label"></label>
+                <input asp-for="Cidade" class="form-control" name="cidade" id="cidade" size="40" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uf" class="control-label"></label>
+                <input asp-for="Uf" class="form-control" name="uf" id="uf" size="2" />
+                <span asp-validation-for="Uf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ibge" class="control-label"></label>
+                <input asp-for="Ibge" class="form-control" name="ibge" id="ibge" size="8" />
+                <span asp-validation-for="Ibge" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

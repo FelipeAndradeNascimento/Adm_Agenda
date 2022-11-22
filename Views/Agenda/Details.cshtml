@@ -1,0 +1,36 @@
+﻿@model Adm_Agenda.Models.mdAgenda
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>mdAgenda</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idContato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idContato)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idTipo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idTipo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dtCompromisso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dtCompromisso)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdAgenda">Edit</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
