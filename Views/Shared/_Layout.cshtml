@@ -30,6 +30,12 @@
             @RenderBody()
         </main>
     </div>
+    <br />
+    <div id="app">
+        <p>{{ titulo }}</p>
+        <p>{{fnConta()}}</p>
+    </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -41,5 +47,21 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
     <script src="~/js/jsBuscaPorCep.js"></script>
+    
+    <script>
+	    new Vue({
+		    el: '#app',
+		    data: {
+			    titulo: 'Titulo da pagina - Vue'
+		    },
+            methods:{
+                fnConta : function(){
+                    return 'teste função'
+                }
+            }
+	    })
+    </script>
+
 </body>
+
 </html>

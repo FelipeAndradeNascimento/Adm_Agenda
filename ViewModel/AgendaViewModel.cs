@@ -1,5 +1,6 @@
 ﻿using Adm_Agenda.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Adm_Agenda.ViewModel
 {
@@ -12,7 +13,8 @@ namespace Adm_Agenda.ViewModel
             Contatos = CarregaContatos();
         }
 
-        public int id { get; set; }
+        [Key]
+        public int IdAgenda { get; set; }
         public string? nome { get; set; }
         public List<SelectListItem> Contatos { get; set; }
 
