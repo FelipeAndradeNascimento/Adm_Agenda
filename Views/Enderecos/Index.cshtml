@@ -1,10 +1,6 @@
 ﻿@model IEnumerable<Adm_Agenda.Models.mdEndereco>
 
-@{
-    ViewData["Title"] = "Lista";
-}
-
-<h1>@ViewData["Title"]</h1>
+<h1 id="objTitulo">{{ titulo }}</h1>
 
 <p>
     <a asp-action="Create">Novo Endereço</a>
@@ -63,3 +59,12 @@
 }
     </tbody>
 </table>
+
+<script>
+    new Vue({
+		    el: '#objTitulo',
+		    data: {
+			    titulo: 'Lista'
+		    }
+	    })
+</script>

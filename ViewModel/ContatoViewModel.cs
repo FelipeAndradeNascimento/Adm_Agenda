@@ -6,6 +6,7 @@ namespace Adm_Agenda.ViewModel
     public class ContatoViewModel
     {
         private readonly Context_db _context;
+        public ContatoViewModel(Context_db context) { _context = context; }
 
         public ContatoViewModel()
         {
