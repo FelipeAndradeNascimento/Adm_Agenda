@@ -7,3 +7,56 @@
 <p>Busca acompanhar o mercado com novas tecnologias e mantem o conhecimento sobre os frameworks que trabalha.</p>
 <hr />
 <p>Valores: Respeito, Educação e Paciência!</p>
+
+Pratica de exercicios vueJs
+
+<div id="desafio">
+	<!-- 1) Preencha a tag <p> abaixo com o seu nome e idade -usando interpolação do Vue -->
+	<p>Usando VueJs - {{ SEU_NOME }} ({{ IDADE }})</p>
+
+	<!-- 2) Exiba sua idade multiplicando por 3 -->	
+	<p>{{ fnIdadeDiff() }}</p>
+
+	<!-- 3) Chame uma função para exibir um número randomico  
+		entre 0 e 1 (Math.random())-->	
+	<p>{{ fnRandomico() }}</p>
+
+	<!-- 4) Procure uma imagem no google e exiba na tag img fazendo
+		o binding no atributo "src"-->	
+	<div>
+		<img v-bind:src="EnderecoImagem" height="400" />
+	</div>
+
+	<!-- 5) Inicialize o input com o seu nome(use o atributo "value")-->	
+	<div>
+		<input type="text" v-bind:value="contador">
+		<button v-on:click="fnBtnSoma($event)">Soma 0</button>
+	</div>
+</div>
+
+	<script>
+		new Vue({
+			el:'#desafio',
+			data:{
+				SEU_NOME: 'Felipe',
+				IDADE:44,
+				EnderecoImagem: 'http://files.cod3r.com.br/curso-vue/vue.jpg',
+				contador : 0,
+				x : 0,
+				y : 0
+			},
+			methods:{
+				fnIdadeDiff : function(){
+					return this.IDADE * 3
+				},
+				fnRandomico(){
+					return Math.random()
+				},
+				fnBtnSoma(ev){
+					console.log(ev)
+					this.x = ev.timeStamp
+					console.log(this.x)
+				}
+			}
+		})
+	</script>

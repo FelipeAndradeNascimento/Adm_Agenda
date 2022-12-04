@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\fnGeral.js" />
     <None Include="wwwroot\js\jsBuscaPorCep.js" />
   </ItemGroup>
 
